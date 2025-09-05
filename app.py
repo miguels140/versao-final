@@ -1,12 +1,11 @@
-# app.py
-import streamlit as st
-from grading import analyze_text
 import nltk
+from textblob import download_corpora
 
-# Baixa corpora do TextBlob
-nltk.download('brown')
+# Baixa corpora necessários para o TextBlob
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
+nltk.download('brown')
+download_corpora.lite()  # Baixa só os essenciais do TextBlob
 
 st.set_page_config(page_title="Corretor de Redação UFRGS", layout="wide")
 
